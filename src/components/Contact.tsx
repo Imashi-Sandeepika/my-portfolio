@@ -42,19 +42,19 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "imashibandara19@gmail.com",
+      value: "imashisandeepika2001@gmail.com",
       href: "mailto:imashibandara19@gmail.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       label: "Phone",
-      value: "+94 77 123 4567",
+      value: "+94 76 498 4320",
       href: "tel:+94771234567"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       label: "Location",
-      value: "Colombo, Sri Lanka",
+      value: "Rathnapura, Sri Lanka",
       href: "#"
     }
   ]
@@ -75,7 +75,7 @@ const Contact = () => {
     {
       icon: <MessageSquare className="w-6 h-6" />,
       label: "WhatsApp",
-      href: "https://wa.me/94771234567",
+      href: "https://wa.me/94764984320",
       color: "hover:text-green-600"
     }
   ]

@@ -4,30 +4,54 @@ import { GraduationCap, Award, BookOpen, Calendar, MapPin, Star } from 'lucide-r
 const Education = () => {
   const education = [
     {
-      degree: "Bachelor of Science in Statistics",
-      institution: "University of Colombo",
-      location: "Colombo, Sri Lanka",
-      duration: "2020 - 2024",
-      gpa: "3.8/4.0",
-      status: "Graduated with First Class Honors",
-      description: "Comprehensive program covering statistical analysis, probability theory, data modeling, and research methodology. Specialized in applied statistics with focus on business analytics and data science applications.",
+      degree: "Bachelor of Information and Communication Technology",
+      institution: "University of Vavuniya",
+      location: "Vavuniya, Sri Lanka",
+      duration: "2023 - 2027",
+      gpa: "3.8 / 4.0",
+      status: "Ongoing",
+      description:
+        "Focused on core ICT principles including software engineering, database systems, networking, and web technologies. Specialized in the Data Science path with training in machine learning, data processing, visualization, and real-world problem solving within the ICT industry.",
       relevantCourses: [
-        "Statistical Inference",
-        "Regression Analysis", 
-        "Time Series Analysis",
-        "Multivariate Statistics",
-        "Data Mining",
-        "Business Statistics",
-        "Research Methodology",
-        "Statistical Computing"
-      ]
-    }
+        "Programming Fundamentals",
+        "Data Structures and Algorithms",
+        "Database Management Systems",
+        "Object-Oriented Programming",
+        "Web Application Development",
+        "Machine Learning Fundamentals",
+        "Data Visualization",
+        "Computer Networks",
+        "Software Engineering",
+      ],
+    },
+    {
+      degree: "Bachelor of Arts in Psychology",
+      institution: "IIC Univercity of Technology",
+      location: "Cambodia",
+      duration: "2022 - 2025",
+      gpa: "3.50 / 4.0",
+      status: "Second Upper Class",
+      description:
+        "Graduated degree in psychology with a focus on cognitive psychology, behavioral science, and mental health. Developed strong research, analytical, and interpersonal skills through coursework and practical projects.",
+      relevantCourses: [
+        "Counselling Psychology",
+        "Clinical Psychology",
+        "Cognitive Psychology",
+        "Behavioral Science",
+        "Research Methods in Psychology",
+        "Social Psychology",
+        "Abnormal Psychology",
+        "Psychological Statistics",
+        "Psychological Research Methods",
+        "Counselling therapy",
+      ],
+    },
   ]
 
   const certifications = [
     {
-      title: "Google Data Analytics Professional Certificate",
-      issuer: "Google (via Coursera)",
+      title: "Python Basics",
+      issuer: "Univercity of Michigan",
       date: "March 2024",
       credentialId: "GDA-2024-001",
       description: "Comprehensive program covering data analysis process, data cleaning, visualization, and analysis using spreadsheets, SQL, R, and Tableau.",
@@ -35,8 +59,8 @@ const Education = () => {
       verified: true
     },
     {
-      title: "Microsoft Power BI Data Analyst Associate",
-      issuer: "Microsoft",
+      title: " Programming for Everybody (Getting Started withPython)",
+      issuer: "Univercity of Michigan",
       date: "January 2024",
       credentialId: "PL-300",
       description: "Professional certification demonstrating expertise in Power BI for data modeling, visualization, and analysis.",
@@ -44,18 +68,18 @@ const Education = () => {
       verified: true
     },
     {
-      title: "SQL for Data Science",
-      issuer: "University of California, Davis (via Coursera)",
-      date: "November 2023",
+      title: "Python Data Structures",
+      issuer: "Univercity of Michigan",
+      date: "November 2024",
       credentialId: "SQL-DS-2023",
       description: "Advanced SQL course covering complex queries, database design, and data analysis techniques.",
       skills: ["SQL", "Database Design", "Query Optimization", "Data Analysis"],
       verified: true
     },
     {
-      title: "Python for Data Science and Machine Learning",
-      issuer: "Jose Portilla (via Udemy)",
-      date: "September 2023",
+      title: "Python for Data Science, AI & Development",
+      issuer: "IBM (International Business Machines Corporation)",
+      date: "October 2025",
       credentialId: "PY-ML-2023",
       description: "Comprehensive course covering Python programming for data science, including pandas, numpy, matplotlib, and scikit-learn.",
       skills: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Machine Learning"],
@@ -65,19 +89,34 @@ const Education = () => {
 
   const achievements = [
     {
-      title: "Dean's List",
-      description: "Maintained GPA above 3.7 for 6 consecutive semesters",
-      year: "2020-2024"
+      title: "Professional Counseling Service Contribution",
+      description: "Provided voluntary psychological counseling and guidance to individuals, supporting emotional well-being and personal development.",
+      year: "Ongoing"
     },
     {
-      title: "Best Statistics Project Award",
-      description: "Recognized for outstanding research project on predictive modeling in healthcare",
-      year: "2023"
+      title: "SLNIPC Professional Membership",
+      description: "Recognized as a member of the Sri Lanka National Institute of Professional Counselors for maintaining high ethical and professional standards.",
+      year: "2024"
     },
     {
-      title: "Data Science Competition Winner",
-      description: "1st place in university-wide data science hackathon",
-      year: "2023"
+      title: "ICT Academic Excellence",
+      description: "Demonstrated strong academic performance in ICT and Data Science coursework including programming, data analysis, and web technologies.",
+      year: "2023 - Present"
+    },
+    {
+      title: "Research Recognition",
+      description: "Conducting an interdisciplinary research study exploring psychology-driven UX design and mental well-being within the ICT industry.",
+      year: "2024 - 2025"
+    },
+    {
+      title: "Active University Club Member",
+      description: "Engaged in community service and leadership activities through LEO Club, ZERO PLASTIC Club, IEEE, and Buddhist Society.",
+      year: "2023 - Present"
+    },
+    {
+      title: "Coursera Certified Learner",
+      description: "Completed multiple ICT and Data Science courses from IBM, Google, Stanford, and other international institutions.",
+      year: "2023 - Present"
     }
   ]
 

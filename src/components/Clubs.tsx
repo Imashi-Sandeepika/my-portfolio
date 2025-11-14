@@ -8,7 +8,7 @@ const Clubs = () => {
   const clubs = [
     {
       name: 'LEO Club',
-      role: 'Active Member',
+      role: 'Director of Membership & Coordinating',
       description: 'Leadership, community service, and youth-driven social impact initiatives within the university.',
       logo: leoLogo,
     },
