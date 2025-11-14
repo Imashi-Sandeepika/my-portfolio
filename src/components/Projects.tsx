@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Image, Sparkles } from 'lucide-react'
+import { ExternalLink, Github, Sparkles } from 'lucide-react'
 
 const Projects = () => {
 
@@ -13,10 +13,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-sky-100">
             Featured Project
           </h2>
-          <div className="w-24 h-1 bg-indigo-500 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-sky-500 mx-auto mb-6"></div>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             A full-stack sentiment analysis web application that connects my Data Science, ICT, and
             Psychology background to real user experience.
@@ -30,9 +30,9 @@ const Projects = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-slate-900/80 border border-slate-700/60 rounded-2xl shadow-2xl p-8"
+            className="bg-slate-900/80 border border-sky-600/60 rounded-2xl shadow-2xl p-8"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-900/70 text-xs font-semibold text-indigo-200 mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-900/70 text-xs font-semibold text-sky-200 mb-4">
               <Sparkles className="w-4 h-4" />
               <span>Sentiment Analysis Web Application</span>
             </div>
@@ -49,7 +49,7 @@ const Projects = () => {
             </p>
 
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-indigo-200 mb-2">Problem Statement</h4>
+              <h4 className="text-sm font-semibold text-sky-200 mb-2">Problem Statement</h4>
               <p className="text-sm text-slate-300">
                 Many organizations collect large amounts of user feedback but struggle to understand the
                 emotional tone behind it. This project focuses on extracting sentiment in a way that
@@ -59,13 +59,13 @@ const Projects = () => {
             </div>
 
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-indigo-200 mb-2">Technologies Used</h4>
+              <h4 className="text-sm font-semibold text-sky-200 mb-2">Technologies Used</h4>
               <div className="flex flex-wrap gap-2">
                 {['Python', 'NLP', 'Machine Learning', 'Flask / Backend', 'HTML / CSS / JS', 'Data Visualization'].map(
                   (tool) => (
                     <span
                       key={tool}
-                      className="px-2 py-1 rounded-full bg-indigo-900/70 text-xs font-medium text-indigo-100"
+                      className="px-2 py-1 rounded-full bg-sky-900/70 text-xs font-medium text-sky-100"
                     >
                       {tool}
                     </span>
@@ -75,7 +75,7 @@ const Projects = () => {
             </div>
 
             <div className="mb-6">
-              <h4 className="text-sm font-semibold text-indigo-200 mb-2">Key Outcomes</h4>
+              <h4 className="text-sm font-semibold text-sky-200 mb-2">Key Outcomes</h4>
               <ul className="text-sm text-slate-300 space-y-1">
                 <li>• Real-time classification of user text into sentiment categories.</li>
                 <li>• Simple, psychologically-aware UI that avoids harsh wording.</li>
@@ -88,7 +88,7 @@ const Projects = () => {
                 href="https://github.com/Imashi-Sandeepika/Sentiment-Analysis-Project.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
               >
                 <Github className="w-4 h-4" />
                 View Code on GitHub
@@ -97,7 +97,7 @@ const Projects = () => {
                 href="https://sentiment-analysis-project-7a2c.onrender.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 border border-indigo-500 text-indigo-200 hover:bg-indigo-500 hover:text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
+                className="flex-1 inline-flex items-center justify-center gap-2 border border-sky-500 text-sky-200 hover:bg-sky-500 hover:text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
                 Live Demo
@@ -105,36 +105,8 @@ const Projects = () => {
             </div>
           </motion.div>
 
-          {/* Screenshot gallery */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 text-xs text-slate-200">
-              <Image className="w-4 h-4" />
-              <span>Application Screenshots</span>
-            </div>
-
-            <p className="text-sm text-slate-300 max-w-md">
-              These screens illustrate how users interact with the system, enter their text, and receive
-              sentiment feedback through a clean and focused UI.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[1, 2, 3].map((index) => (
-                <div
-                  key={index}
-                  className="relative overflow-hidden rounded-xl border border-slate-700/60 bg-gradient-to-br from-slate-800 to-slate-900 group h-40 flex items-center justify-center"
-                >
-                  <span className="text-xs text-slate-300">Screenshot placeholder {index}</span>
-                  <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          {/* Right column left intentionally empty for cleaner layout without screenshots */}
+          <div className="hidden lg:block" />
         </div>
 
         {/* Call to Action */}
