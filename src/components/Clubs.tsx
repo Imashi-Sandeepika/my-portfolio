@@ -15,7 +15,7 @@ const Clubs = () => {
     {
       name: 'ZERO PLASTIC Club',
       role: 'Active Member',
-      description: 'Environmental awareness, plastic-free campaigns, and sustainable campus projects.',
+      description: 'Environmental awareness, plastic-saved. how free and sustainable campus projects.',
       logo: zeroPlasticLogo,
     },
     {

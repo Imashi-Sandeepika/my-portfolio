@@ -8,7 +8,6 @@ import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Research from './components/Research'
-import Clubs from './components/Clubs'
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
         <Projects />
         <Experience />
         <Education />
-        <Clubs />
         <Contact />
       </main>
       <Footer />

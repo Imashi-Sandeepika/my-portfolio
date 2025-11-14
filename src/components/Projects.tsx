@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Github, Image, Sparkles } from 'lucide-react'
 
-import screenshot1 from '../assets/projects/sentiment-1.png'
-import screenshot2 from '../assets/projects/sentiment-2.png'
-import screenshot3 from '../assets/projects/sentiment-3.png'
-
 const Projects = () => {
-  const screenshots = [screenshot1, screenshot2, screenshot3]
 
   return (
     <section id="projects" className="py-20 bg-[#020617] text-white">
@@ -129,15 +124,13 @@ const Projects = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {screenshots.map((src, index) => (
+              {[1, 2, 3].map((index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden rounded-xl border border-slate-700/60 bg-slate-900/80 group"
+                  className="relative overflow-hidden rounded-xl border border-slate-700/60 bg-gradient-to-br from-slate-800 to-slate-900 group h-40 flex items-center justify-center"
                 >
-                  <img src={src} alt={`Sentiment analysis screenshot ${index + 1}`} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-xs text-slate-100 transition-opacity">
-                    Screenshot {index + 1}
-                  </div>
+                  <span className="text-xs text-slate-300">Screenshot placeholder {index}</span>
+                  <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               ))}
             </div>
