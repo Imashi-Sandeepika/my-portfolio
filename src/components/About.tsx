@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion'
-import { User, Target, Lightbulb, TrendingUp } from 'lucide-react'
+import { Target, Lightbulb, TrendingUp } from 'lucide-react'
+import profileImg from '../assets/MyOff.jpg'
+import itCircleImg from '../assets/6859c655d8f3f0001da2e33a.jpg'
+import mindCircleImg from '../assets/activity-monitoring.png'
 
 const About = () => {
   const highlights = [
@@ -37,7 +40,7 @@ const About = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -46,12 +49,28 @@ const About = () => {
             className="relative"
           >
             <div className="w-full max-w-md mx-auto">
-              <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center shadow-2xl">
-                <User size={120} className="text-primary-600" />
+              <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={profileImg}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary-600 rounded-full opacity-20"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary-400 rounded-full opacity-30"></div>
+              {/* Decorative elements with IT & Mind images */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full overflow-hidden shadow-lg border-2 border-white">
+                <img
+                  src={itCircleImg}
+                  alt="IT & Technology"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full overflow-hidden shadow-md border-2 border-white">
+                <img
+                  src={mindCircleImg}
+                  alt="Data & Mind"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </motion.div>
 
