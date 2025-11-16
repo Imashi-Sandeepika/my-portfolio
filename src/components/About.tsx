@@ -57,14 +57,14 @@ const About = () => {
                 />
               </div>
               {/* Decorative elements with IT & Mind images */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full overflow-hidden shadow-lg border-2 border-white">
+              <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full overflow-hidden shadow-lg border-2 border-black">
                 <img
                   src={itCircleImg}
                   alt="IT & Technology"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full overflow-hidden shadow-md border-2 border-white">
+              <div className="absolute -bottom-4 -left-4 w-48 h-48 rounded-full overflow-hidden shadow-md border-2 border-black">
                 <img
                   src={mindCircleImg}
                   alt="Data & Mind"

@@ -1,14 +1,16 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { GraduationCap, Award, BookOpen, Calendar, MapPin, Star } from 'lucide-react'
 
 const Education = () => {
+  const [showPsychologyDocs, setShowPsychologyDocs] = useState(false)
+
   const education = [
     {
       degree: "Bachelor of Information and Communication Technology",
       institution: "University of Vavuniya",
       location: "Vavuniya, Sri Lanka",
       duration: "2023 - 2027",
-      gpa: "3.8 / 4.0",
       status: "Ongoing",
       description:
         "Focused on core ICT principles including software engineering, database systems, networking, and web technologies. Specialized in the Data Science path with training in machine learning, data processing, visualization, and real-world problem solving within the ICT industry.",
@@ -44,6 +46,20 @@ const Education = () => {
         "Psychological Statistics",
         "Psychological Research Methods",
         "Counselling therapy",
+      ],
+      documents: [
+        {
+          label: "Final Thesis (C38874)",
+          path: "/docs/PSCHOLOGY/Final-Thesis-C38874.pdf",
+        },
+        {
+          label: "Thesis Presentation",
+          path: "/docs/PSCHOLOGY/ThesisPresentation.pdf",
+        },
+        {
+          label: "Degree Certificate",
+          path: "/docs/PSCHOLOGY/Degree-Certificate.pdf",
+        },
       ],
     },
   ]
@@ -96,7 +112,7 @@ const Education = () => {
     {
       title: "SLNIPC Professional Membership",
       description: "Recognized as a member of the Sri Lanka National Institute of Professional Counselors for maintaining high ethical and professional standards.",
-      year: "2024"
+      year: "2023"
     },
     {
       title: "ICT Academic Excellence",
@@ -159,7 +175,7 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg p-8 mb-6"
+              className="bg-white rounded-xl shadow-lg p-8 mb-6 border border-transparent hover:border-primary-500 hover:shadow-2xl transition-shadow transition-colors duration-300"
             >
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="md:col-span-2">
@@ -189,10 +205,50 @@ const Education = () => {
                       </span>
                     </div>
                   </div>
-                  
+
                   <p className="text-secondary-600 mb-6 leading-relaxed">
                     {edu.description}
                   </p>
+
+                  {edu.degree === 'Bachelor of Arts in Psychology' && edu.documents && (
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => setShowPsychologyDocs(prev => !prev)}
+                        className="px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-semibold shadow hover:bg-primary-700 transition-colors"
+                      >
+                        {showPsychologyDocs ? 'Hide Psychology Documents' : 'View Psychology Documents'}
+                      </button>
+
+                      {showPsychologyDocs && (
+                        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                          {edu.documents.map((doc, docIndex) => (
+                            <a
+                              key={docIndex}
+                              href={doc.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block bg-secondary-50 rounded-xl border border-secondary-200 p-4 text-left hover:border-primary-500 hover:shadow-md transition-all"
+                            >
+                              <div className="flex items-start gap-3">
+                                <div className="mt-1">
+                                  <BookOpen className="w-5 h-5 text-primary-600" />
+                                </div>
+                                <div>
+                                  <h6 className="font-semibold text-secondary-900 text-sm mb-1">
+                                    {doc.label}
+                                  </h6>
+                                  <p className="text-xs text-secondary-600">
+                                    Click to open PDF in a new tab
+                                  </p>
+                                </div>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 <div>
