@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Download, Eye, BarChart3, TrendingUp, Database, PieChart } from 'lucide-react'
+import profileImg from '../assets/MyOff.jpg'
 
 const Hero = () => {
   const handleDownloadResume = () => {
@@ -12,7 +13,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-white relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center bg-gradient-to-br from-[#0A0F2D] via-[#0B1337] to-[#0A0F2D] text-white relative overflow-hidden">
       {/* Background Analytics Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -49,83 +50,75 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-5xl md:text-7xl font-bold"
+            >
+              Imashi Sandeepika
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-2xl md:text-3xl font-semibold text-sky-400 mb-6"
+            >
+              Data Analyst
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.45 }}
+              className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed"
+            >
+              Turning data into actionable insights with clean visuals, automation, and sound analysis.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 mt-10"
+            >
+              <button
+                onClick={handleDownloadResume}
+                className="flex items-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-6 py-3 rounded-lg text-sm font-semibold transition-colors shadow"
+              >
+                <Download size={20} />
+                Download CV
+              </button>
+              <button
+                onClick={handleViewProjects}
+                className="flex items-center gap-2 border border-sky-500 text-sky-200 hover:bg-sky-500 hover:text-white px-6 py-3 rounded-lg text-sm font-semibold transition-colors"
+              >
+                <Eye size={20} />
+                View Projects
+              </button>
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold text-secondary-900"
-          >
-            Imashi Sandeepika
-          </motion.h1>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl md:text-3xl font-semibold text-primary-600 mb-6"
-          >
-            Data Analyst
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl md:text-2xl text-secondary-600 max-w-4xl mx-auto leading-relaxed"
-          >
-            Transforming raw data into meaningful insights to support smarter business decisions
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12"
-          >
-            <button
-              onClick={handleDownloadResume}
-              className="flex items-center gap-3 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              <Download size={24} />
-              Download Resume
-            </button>
-            
-            <button
-              onClick={handleViewProjects}
-              className="flex items-center gap-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-            >
-              <Eye size={24} />
-              View Projects
-            </button>
-          </motion.div>
-
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="flex justify-center md:justify-end"
           >
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-primary-400 rounded-full flex justify-center"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, repeatType: 'mirror' }}
+              className="relative"
             >
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-primary-400 rounded-full mt-2"
+              <img
+                src={profileImg}
+                alt="Profile"
+                className="w-85 h-85 md:w-85 md:h-85 rounded-full object-cover ring-4 ring-sky-500/40 shadow-2xl"
               />
+              <div className="absolute inset-0 rounded-full ring-8 ring-sky-400/20 blur-2xl" />
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
