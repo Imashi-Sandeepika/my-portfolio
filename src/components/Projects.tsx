@@ -105,8 +105,116 @@ const Projects = () => {
             </div>
           </motion.div>
 
-          {/* Right column left intentionally empty for cleaner layout without screenshots */}
-          <div className="hidden lg:block" />
+          {/* Second project card */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-slate-900/80 border border-sky-600/60 rounded-2xl shadow-2xl p-8"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-900/70 text-xs font-semibold text-sky-200 mb-4">
+              <Sparkles className="w-4 h-4" />
+              <span>Laptop Price Predictor</span>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+              Predicting Laptop Prices with ML
+            </h3>
+
+            <p className="text-slate-200 mb-4">
+              A machine learning project that predicts laptop prices based on specifications like brand,
+              processor, RAM, storage, GPU, and screen features. Built with Python and scikit-learn and
+              served via a simple web UI.
+            </p>
+
+            <div className="mb-4">
+              <h4 className="text-sm font-semibold text-sky-200 mb-2">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {['Python', 'scikit-learn', 'Pandas', 'Flask / Backend', 'HTML / CSS / JS'].map((tool) => (
+                  <span key={tool} className="px-2 py-1 rounded-full bg-sky-900/70 text-xs font-medium text-sky-100">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://github.com/Imashi-Sandeepika/Laptop-Price-Predictor.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                View Code on GitHub
+              </a>
+              <a
+                href="https://laptop-price-predictor-oqep.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 border border-sky-500 text-sky-200 hover:bg-sky-500 hover:text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Live Demo
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Third project card */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-slate-900/80 border border-sky-600/60 rounded-2xl shadow-2xl p-8 lg:col-span-2"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-900/70 text-xs font-semibold text-sky-200 mb-4">
+              <Sparkles className="w-4 h-4" />
+              <span>Portfolio Website</span>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+              Modern React + Vite Portfolio
+            </h3>
+
+            <p className="text-slate-200 mb-4">
+              A professional, responsive portfolio showcasing data analysis, visualization, and problem-solving skills.
+              Built with React + Vite, Tailwind CSS, Framer Motion, and deployed to a modern host.
+            </p>
+
+            <div className="mb-4">
+              <h4 className="text-sm font-semibold text-sky-200 mb-2">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'TypeScript'].map((tool) => (
+                  <span key={tool} className="px-2 py-1 rounded-full bg-sky-900/70 text-xs font-medium text-sky-100">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://github.com/Imashi-Sandeepika/my-portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                View Code on GitHub
+              </a>
+              <a
+                href="https://my-portfolio-beige-ten-63.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 inline-flex items-center justify-center gap-2 border border-sky-500 text-sky-200 hover:bg-sky-500 hover:text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Live Demo
+              </a>
+            </div>
+          </motion.div>
         </div>
 
         {/* Call to Action */}

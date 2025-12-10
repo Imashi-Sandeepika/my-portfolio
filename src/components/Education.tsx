@@ -4,6 +4,8 @@ import { GraduationCap, Award, BookOpen, Calendar, MapPin, Star } from 'lucide-r
 
 const Education = () => {
   const [showPsychologyDocs, setShowPsychologyDocs] = useState(false)
+  const [showCounselingDocs, setShowCounselingDocs] = useState(false)
+  const [showHRMDocs, setShowHRMDocs] = useState(false)
 
   const education = [
     {
@@ -26,6 +28,65 @@ const Education = () => {
         "Software Engineering",
       ],
     },
+    {
+    degree: "Diploma in Human Resource Management",
+    institution: "IMBS Institute of Management & Business Studies",
+    location: "Green Campus",
+    duration: "2020 - 2021",
+    gpa: "3.56",
+    status: "PASS",
+    description: "Successfully completed the endorsed Diploma programme of the Association of Business Executives in the United Kingdom in Management & Business Studies, with a focus on Human Resource Management, Human Resource Development, and Business Law.",
+    relevantCourses: [
+      "Management",
+      "Human Resource Management",
+      "Organization Behavior",
+      "Business Communication",
+      "Information Technology",
+      "Human Resource Development",
+      "Organization Behavior II",
+      "Industrial Psychology",
+      "Business Law",
+      "Case Study",
+      "Project Report / Management Internship"
+    ],
+    documents: [
+      {
+        label: "HRM Diploma",
+        path: "/docs/PSCHOLOGY/HRM_Diploma.pdf",
+      }
+    ]
+    }
+
+    ,
+    {
+    degree: "Diploma in Psychology & Counselling",
+    institution: "IMBS Institute of Management & Business Studies",
+    location: "Green Campus",
+    duration: "2020 - 2021",
+    gpa: "4.00",
+    status: "MERIT PASS",
+    description: "Successfully completed the endorsed Diploma programme of the Association of Business Executives in the United Kingdom in Management & Business Studies, with a focus on General, Abnormal, Developmental, and Child Psychology, as well as Counselling Ethics and Skills.",
+    relevantCourses: [
+      "General Psychology",
+      "Abnormal Psychology",
+      "Developmental Psychology",
+      "Child Psychology",
+      "Health Psychology",
+      "Counselling Psychology",
+      "Counselling Ethics",
+      "General Techniques in Counselling",
+      "Counselling Skills",
+      "Psychotherapeutic Techniques in Counselling"
+  ],
+    documents: [
+      {
+        label: "Counseling Diploma",
+        path: "/docs/PSCHOLOGY/Counseling_Diploma.pdf",
+      }
+    ]
+    }
+
+    ,
     {
       degree: "Bachelor of Arts in Psychology",
       institution: "IIC Univercity of Technology",
@@ -72,6 +133,7 @@ const Education = () => {
       credentialId: "GDA-2024-001",
       description: "Comprehensive program covering data analysis process, data cleaning, visualization, and analysis using spreadsheets, SQL, R, and Tableau.",
       skills: ["Data Analysis", "Data Visualization", "SQL", "R Programming", "Tableau", "Data Cleaning"],
+      url: "https://www.coursera.org/account/accomplishments/verify/DO6SVSJITAKX",
       verified: true
     },
     {
@@ -81,6 +143,7 @@ const Education = () => {
       credentialId: "PL-300",
       description: "Professional certification demonstrating expertise in Power BI for data modeling, visualization, and analysis.",
       skills: ["Power BI", "DAX", "Power Query", "Data Modeling", "Business Intelligence"],
+      url: "https://www.coursera.org/account/accomplishments/verify/GNACW4RYATUQ",
       verified: true
     },
     {
@@ -90,6 +153,17 @@ const Education = () => {
       credentialId: "SQL-DS-2023",
       description: "Advanced SQL course covering complex queries, database design, and data analysis techniques.",
       skills: ["SQL", "Database Design", "Query Optimization", "Data Analysis"],
+      url: "https://www.coursera.org/account/accomplishments/verify/BUM5IB3FL558",
+      verified: true
+    },
+    {
+      title: "Capstone: Retrieving, Processing, and Visualizing Data with Python",
+      issuer: "University of Michigan",
+      date: "N/A",
+      credentialId: "N/A",
+      description: "Capstone project applying Python to retrieve, process, and visualize data end-to-end.",
+      skills: ["Python", "Data Processing", "Visualization", "APIs"],
+      url: "https://www.coursera.org/account/accomplishments/verify/YZ3CPB5R9FPI",
       verified: true
     },
     {
@@ -99,6 +173,35 @@ const Education = () => {
       credentialId: "PY-ML-2023",
       description: "Comprehensive course covering Python programming for data science, including pandas, numpy, matplotlib, and scikit-learn.",
       skills: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "Machine Learning"],
+      url: "https://www.coursera.org/account/accomplishments/verify/JDQSTVXSV695",
+      verified: true
+    },
+    {
+      title: "Introduction to Software Engineering",
+      issuer: "Coursera",
+      date: "November 29, 2025",
+      credentialId: "Q00BZF6NNVX8",
+      description: "Introduction to Software Engineering covering SDLC fundamentals, software architecture and design patterns, basic Python constructs, and roles/tools across front-end and back-end development.",
+      skills: [
+        "Software Engineering",
+        "SDLC",
+        "Python",
+        "Software Design Patterns",
+        "Front-End",
+        "Back-End",
+        "Application Deployment"
+      ],
+      url: "https://www.coursera.org/account/accomplishments/verify/Q00BZF6NNVX8",
+      verified: true
+    },
+    {
+      title: "Python Classes and Inheritance",
+      issuer: "University of Michigan",
+      date: "N/A",
+      credentialId: "N/A",
+      description: "Intermediate Python course covering classes, objects, inheritance, and core OOP concepts.",
+      skills: ["Python", "OOP", "Classes", "Inheritance"],
+      url: "https://www.coursera.org/account/accomplishments/verify/IB0MUDUW0GAT",
       verified: true
     }
   ]
@@ -217,7 +320,7 @@ const Education = () => {
                         onClick={() => setShowPsychologyDocs(prev => !prev)}
                         className="px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-semibold shadow hover:bg-primary-700 transition-colors"
                       >
-                        {showPsychologyDocs ? 'Hide Psychology Documents' : 'View Psychology Documents'}
+                        {showPsychologyDocs ? 'Hide Documents' : 'View Documents'}
                       </button>
 
                       {showPsychologyDocs && (
@@ -249,7 +352,90 @@ const Education = () => {
                       )}
                     </div>
                   )}
+                  {edu.degree === 'Diploma in Psychology & Counselling' && edu.documents && (
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => setShowCounselingDocs(prev => !prev)}
+                        className="px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-semibold shadow hover:bg-primary-700 transition-colors"
+                      >
+                        {showCounselingDocs ? 'Hide Documents' : 'View Documents'}
+                      </button>
+
+                      {showCounselingDocs && (
+                        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                          {edu.documents.map((doc, docIndex) => (
+                            <a
+                              key={docIndex}
+                              href={new URL(doc.path, import.meta.env.BASE_URL).toString()}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block bg-secondary-50 rounded-xl border border-secondary-200 p-4 text-left hover:border-primary-500 hover:shadow-md transition-all"
+                            >
+                              <div className="flex items-start gap-3">
+                                <div className="mt-1">
+                                  <BookOpen className="w-5 h-5 text-primary-600" />
+                                </div>
+                                <div>
+                                  <h6 className="font-semibold text-secondary-900 text-sm mb-1">
+                                    {doc.label}
+                                  </h6>
+                                  <p className="text-xs text-secondary-600">
+                                    Click to open PDF in a new tab
+                                  </p>
+                                </div>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {edu.degree === 'Diploma in Human Resource Management' && edu.documents && (
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => setShowHRMDocs(prev => !prev)}
+                        className="px-4 py-2 rounded-full bg-primary-600 text-white text-sm font-semibold shadow hover:bg-primary-700 transition-colors"
+                      >
+                        {showHRMDocs ? 'Hide Documents' : 'View Documents'}
+                      </button>
+
+                      {showHRMDocs && (
+                        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                          {edu.documents.map((doc, docIndex) => (
+                            <a
+                              key={docIndex}
+                              href={new URL(doc.path, import.meta.env.BASE_URL).toString()}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block bg-secondary-50 rounded-xl border border-secondary-200 p-4 text-left hover:border-primary-500 hover:shadow-md transition-all"
+                            >
+                              <div className="flex items-start gap-3">
+                                <div className="mt-1">
+                                  <BookOpen className="w-5 h-5 text-primary-600" />
+                                </div>
+                                <div>
+                                  <h6 className="font-semibold text-secondary-900 text-sm mb-1">
+                                    {doc.label}
+                                  </h6>
+                                  <p className="text-xs text-secondary-600">
+                                    Click to open PDF in a new tab
+                                  </p>
+                                </div>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
+
+
+
+
 
                 <div>
                   <h6 className="font-semibold text-secondary-800 mb-3">Relevant Coursework</h6>
@@ -316,6 +502,16 @@ const Education = () => {
                 <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                   {cert.description}
                 </p>
+                {cert.url && (
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-sm text-primary-600 hover:text-primary-700 hover:underline mb-4"
+                  >
+                    View Certificate
+                  </a>
+                )}
 
                 <div>
                   <h5 className="font-semibold text-secondary-800 mb-2 text-sm">Skills Covered:</h5>
