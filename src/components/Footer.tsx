@@ -171,15 +171,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <div className="flex items-center gap-2 text-secondary-400">
-            <span>© {currentYear} Imashi Sandeepika. Made with</span>
-            <Heart className="w-4 h-4 text-red-500 fill-current" />
-            <span>and lots of data</span>
-          </div>
           
-          <div className="flex items-center gap-6 text-sm text-secondary-400">
-            <span>Built with React + TypeScript + Tailwind CSS</span>
-          </div>
         </motion.div>
 
         {/* Fun Data Fact */}
