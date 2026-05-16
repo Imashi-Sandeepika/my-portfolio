@@ -29,7 +29,7 @@ function App() {
       <div className="max-w-6xl w-full flex flex-col lg:flex-row gap-6 relative">
         {/* Sidebar */}
         <Sidebar />
-        
+
         {/* Main Content Area */}
         <main className="flex-1 bg-[#1e1e1f] rounded-3xl relative w-full border border-gray-800 shadow-2xl min-h-[800px]">
           <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />

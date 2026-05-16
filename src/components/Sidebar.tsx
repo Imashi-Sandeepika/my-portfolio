@@ -25,8 +25,8 @@ const Sidebar = () => {
           </div>
           <div className="overflow-hidden">
             <p className="text-xs text-gray-400 uppercase mb-0.5 tracking-wider font-semibold">Email</p>
-            <p className="text-sm text-gray-200 truncate" title="imashi.sandeepika@gmail.com">
-              imashi.sandeepika@gmail.com
+            <p className="text-sm text-gray-200 truncate" title="imashisandeepika2001@gmail.com">
+              imashisandeepika2001@gmail.com
             </p>
           </div>
         </div>
@@ -37,17 +37,7 @@ const Sidebar = () => {
           </div>
           <div>
             <p className="text-xs text-gray-400 uppercase mb-0.5 tracking-wider font-semibold">Phone</p>
-            <p className="text-sm text-gray-200">+94 12 345 6789</p>
-          </div>
-        </div>
-        
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-[#282829] text-sky-400 rounded-xl flex justify-center items-center shadow-sm border border-gray-800">
-            <Calendar size={18} />
-          </div>
-          <div>
-            <p className="text-xs text-gray-400 uppercase mb-0.5 tracking-wider font-semibold">Birthday</p>
-            <p className="text-sm text-gray-200">Jan 1, 2000</p>
+            <p className="text-sm text-gray-200">0764984320</p>
           </div>
         </div>
         
@@ -57,7 +47,7 @@ const Sidebar = () => {
           </div>
           <div>
             <p className="text-xs text-gray-400 uppercase mb-0.5 tracking-wider font-semibold">Location</p>
-            <p className="text-sm text-gray-200">Colombo, Sri Lanka</p>
+            <p className="text-sm text-gray-200">Rathnapura</p>
           </div>
         </div>
       </div>
