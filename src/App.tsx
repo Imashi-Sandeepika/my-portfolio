@@ -1,27 +1,43 @@
+import { useState } from 'react'
+import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
 import About from './components/About'
-import Skills from './components/Skills'
+import Resume from './components/Resume'
 import Projects from './components/Projects'
-import Education from './components/Education'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import Research from './components/Research'
+import Certifications from './components/Certifications'
 
 function App() {
+  const [activeTab, setActiveTab] = useState('About')
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'About':
+        return <About />
+      case 'Resume':
+        return <Resume />
+      case 'Projects':
+        return <Projects />
+      case 'Certifications':
+        return <Certifications />
+      default:
+        return <About />
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-[#0A0F2D] text-white">
-      <Navbar />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Research />
-        <Skills />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-[#111111] text-gray-300 font-sans p-4 md:p-10 flex justify-center items-start">
+      <div className="max-w-6xl w-full flex flex-col lg:flex-row gap-6 relative">
+        {/* Sidebar */}
+        <Sidebar />
+        
+        {/* Main Content Area */}
+        <main className="flex-1 bg-[#1e1e1f] rounded-3xl relative w-full border border-gray-800 shadow-2xl min-h-[800px]">
+          <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+          <div className="p-8 pt-8 lg:mt-8">
+            {renderContent()}
+          </div>
+        </main>
+      </div>
     </div>
   )
 }

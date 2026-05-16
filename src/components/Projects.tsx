@@ -1,243 +1,63 @@
-import { motion } from 'framer-motion'
-import { ExternalLink, Github, Sparkles } from 'lucide-react'
+import { Eye, Github } from 'lucide-react'
 
 const Projects = () => {
+  const projects = [
+    {
+      title: "Understanding User Emotion Through Data",
+      category: "Sentiment Analysis Web Application",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+      desc: "A web application that analyzes text input and classifies it as positive, negative, or neutral using NLP techniques.",
+      github: "https://github.com/Imashi-Sandeepika/Sentiment-Analysis-Project.git",
+      demo: "https://sentiment-analysis-project-7a2c.onrender.com"
+    },
+    {
+      title: "Predicting Laptop Prices with ML",
+      category: "Laptop Price Predictor",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop",
+      desc: "A machine learning project that predicts laptop prices based on specifications like brand, processor, RAM, and GPU.",
+      github: "https://github.com/Imashi-Sandeepika/Laptop-Price-Predictor.git",
+      demo: "https://laptop-price-predictor-oqep.onrender.com"
+    },
+    {
+      title: "Modern React + Vite Portfolio",
+      category: "Portfolio Website",
+      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=600&auto=format&fit=crop",
+      desc: "A professional, responsive portfolio showcasing data analysis, visualization, and problem-solving skills.",
+      github: "https://github.com/Imashi-Sandeepika/my-portfolio",
+      demo: "https://my-portfolio-beige-ten-63.vercel.app"
+    }
+  ]
 
   return (
-    <section id="projects" className="py-20 bg-[#020617] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-sky-100">
-            Featured Project
-          </h2>
-          <div className="w-24 h-1 bg-sky-500 mx-auto mb-6"></div>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            A full-stack sentiment analysis web application that connects my Data Science, ICT, and
-            Psychology background to real user experience.
-          </p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* Main project card */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-slate-900/80 border border-sky-600/60 rounded-2xl shadow-2xl p-8"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-900/70 text-xs font-semibold text-sky-200 mb-4">
-              <Sparkles className="w-4 h-4" />
-              <span>Sentiment Analysis Web Application</span>
-            </div>
-
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-              Understanding User Emotion Through Data
-            </h3>
-
-            <p className="text-slate-200 mb-4">
-              A web application that analyzes text input (such as reviews or feedback) and classifies it
-              as positive, negative, or neutral using Natural Language Processing techniques. The
-              interface is designed with a counseling-aware perspective, presenting feedback in a way
-              that is clear, non-judgmental, and supportive for users.
-            </p>
-
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-sky-200 mb-2">Problem Statement</h4>
-              <p className="text-sm text-slate-300">
-                Many organizations collect large amounts of user feedback but struggle to understand the
-                emotional tone behind it. This project focuses on extracting sentiment in a way that
-                supports better user experience decisions and respects the psychological impact of how
-                results are communicated.
-              </p>
-            </div>
-
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-sky-200 mb-2">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2">
-                {['Python', 'NLP', 'Machine Learning', 'Flask / Backend', 'HTML / CSS / JS', 'Data Visualization'].map(
-                  (tool) => (
-                    <span
-                      key={tool}
-                      className="px-2 py-1 rounded-full bg-sky-900/70 text-xs font-medium text-sky-100"
-                    >
-                      {tool}
-                    </span>
-                  ),
-                )}
+    <div className="animate-fade-in">
+      <h2 className="text-3xl font-bold text-white mb-8 relative pb-4 inline-block">
+        Projects
+        <span className="absolute bottom-0 left-0 w-12 h-1.5 bg-sky-400 rounded-full"></span>
+      </h2>
+      
+      <div className="grid md:grid-cols-2 gap-8">
+        {projects.map((project, index) => (
+          <div key={index} className="group relative bg-[#212123] rounded-2xl border border-gray-800 overflow-hidden shadow-md flex flex-col h-full">
+            <div className="h-48 overflow-hidden relative">
+              <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-[#1e1e1f]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="bg-[#282829] p-3 rounded-xl text-sky-400 hover:text-white transition-colors border border-gray-700">
+                  <Eye size={20} />
+                </a>
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="bg-[#282829] p-3 rounded-xl text-sky-400 hover:text-white transition-colors border border-gray-700">
+                  <Github size={20} />
+                </a>
               </div>
             </div>
-
-            <div className="mb-6">
-              <h4 className="text-sm font-semibold text-sky-200 mb-2">Key Outcomes</h4>
-              <ul className="text-sm text-slate-300 space-y-1">
-                <li>• Real-time classification of user text into sentiment categories.</li>
-                <li>• Simple, psychologically-aware UI that avoids harsh wording.</li>
-                <li>• Clear visual summaries to support data-driven UX decisions.</li>
-              </ul>
+            <div className="p-6 flex-1 flex flex-col">
+              <span className="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2 block">{project.category}</span>
+              <h3 className="text-lg font-bold text-white mb-2 leading-snug">{project.title}</h3>
+              <p className="text-sm text-gray-400 leading-relaxed flex-1">{project.desc}</p>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://github.com/Imashi-Sandeepika/Sentiment-Analysis-Project.git"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
-              >
-                <Github className="w-4 h-4" />
-                View Code on GitHub
-              </a>
-              <a
-                href="https://sentiment-analysis-project-7a2c.onrender.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 border border-sky-500 text-sky-200 hover:bg-sky-500 hover:text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Live Demo
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Second project card */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-slate-900/80 border border-sky-600/60 rounded-2xl shadow-2xl p-8"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-900/70 text-xs font-semibold text-sky-200 mb-4">
-              <Sparkles className="w-4 h-4" />
-              <span>Laptop Price Predictor</span>
-            </div>
-
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-              Predicting Laptop Prices with ML
-            </h3>
-
-            <p className="text-slate-200 mb-4">
-              A machine learning project that predicts laptop prices based on specifications like brand,
-              processor, RAM, storage, GPU, and screen features. Built with Python and scikit-learn and
-              served via a simple web UI.
-            </p>
-
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-sky-200 mb-2">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2">
-                {['Python', 'scikit-learn', 'Pandas', 'Flask / Backend', 'HTML / CSS / JS'].map((tool) => (
-                  <span key={tool} className="px-2 py-1 rounded-full bg-sky-900/70 text-xs font-medium text-sky-100">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://github.com/Imashi-Sandeepika/Laptop-Price-Predictor.git"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
-              >
-                <Github className="w-4 h-4" />
-                View Code on GitHub
-              </a>
-              <a
-                href="https://laptop-price-predictor-oqep.onrender.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 border border-sky-500 text-sky-200 hover:bg-sky-500 hover:text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Live Demo
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Third project card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-slate-900/80 border border-sky-600/60 rounded-2xl shadow-2xl p-8 lg:col-span-2"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-900/70 text-xs font-semibold text-sky-200 mb-4">
-              <Sparkles className="w-4 h-4" />
-              <span>Portfolio Website</span>
-            </div>
-
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-              Modern React + Vite Portfolio
-            </h3>
-
-            <p className="text-slate-200 mb-4">
-              A professional, responsive portfolio showcasing data analysis, visualization, and problem-solving skills.
-              Built with React + Vite, Tailwind CSS, Framer Motion, and deployed to a modern host.
-            </p>
-
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-sky-200 mb-2">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2">
-                {['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'TypeScript'].map((tool) => (
-                  <span key={tool} className="px-2 py-1 rounded-full bg-sky-900/70 text-xs font-medium text-sky-100">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://github.com/Imashi-Sandeepika/my-portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
-              >
-                <Github className="w-4 h-4" />
-                View Code on GitHub
-              </a>
-              <a
-                href="https://my-portfolio-beige-ten-63.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 border border-sky-500 text-sky-200 hover:bg-sky-500 hover:text-white px-4 py-3 rounded-lg text-sm font-semibold transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Live Demo
-              </a>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <p className="text-lg text-slate-300 mb-6">
-            Interested in seeing more projects or discussing how sentiment analysis can support your
-            product or research?
-          </p>
-          <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-          >
-            Get In Touch
-          </button>
-        </motion.div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   )
 }
 

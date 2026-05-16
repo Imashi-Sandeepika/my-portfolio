@@ -69,7 +69,7 @@ const Contact = () => {
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/imashi-sandeepika",
+      href: "https://www.linkedin.com/in/imashisandeepika-b0a38a3a1/",
       color: "hover:text-blue-600"
     },
     {

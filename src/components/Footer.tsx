@@ -25,7 +25,7 @@ const Footer = () => {
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/imashi-sandeepika",
+      href: "https://www.linkedin.com/in/imashisandeepika-b0a38a3a1/",
       label: "LinkedIn"
     },
     {

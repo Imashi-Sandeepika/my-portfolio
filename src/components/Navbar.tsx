@@ -1,87 +1,42 @@
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import React from 'react'
+import { motion } from 'framer-motion'
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+interface NavbarProps {
+  activeTab: string
+  setActiveTab: (tab: string) => void
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Research', href: '#research' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' },
-  ]
+const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
+  const tabs = ['About', 'Resume', 'Projects', 'Certifications']
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-800 ${
-        scrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-[#020617]/80 backdrop-blur-sm'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <a href="#home" className="text-2xl font-bold text-sky-400">
-              Imashi Sandeepika
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-slate-200 hover:text-sky-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-200 hover:text-sky-400 p-2"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-slate-900/95 backdrop-blur-sm rounded-lg mt-2 border border-slate-700">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-slate-200 hover:text-sky-400 block px-3 py-2 text-base font-medium transition-colors duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+    <div className="sticky top-6 z-50 flex justify-center lg:justify-end w-full px-4 lg:px-8 pt-6">
+      <nav className="bg-[#282829]/70 backdrop-blur-2xl rounded-full border border-gray-600/30 shadow-[0_8px_32px_rgba(0,0,0,0.5)] p-1.5">
+        <ul className="flex items-center gap-1">
+          {tabs.map((tab) => (
+            <li key={tab} className="relative">
+              <button
+                onClick={() => setActiveTab(tab)}
+                className={`relative px-5 py-2.5 text-[14px] font-bold tracking-wide transition-colors duration-300 rounded-full z-10 ${
+                  activeTab === tab 
+                    ? 'text-white' 
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                {activeTab === tab && (
+                  <motion.div
+                    layoutId="activeTabIndicator"
+                    className="absolute inset-0 bg-gradient-to-r from-sky-500 to-sky-400 rounded-full -z-10 shadow-[0_0_20px_rgba(56,189,248,0.4)]"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-20">{tab}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   )
 }
 

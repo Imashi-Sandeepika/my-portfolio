@@ -203,6 +203,16 @@ const Education = () => {
       skills: ["Python", "OOP", "Classes", "Inheritance"],
       url: "https://www.coursera.org/account/accomplishments/verify/IB0MUDUW0GAT",
       verified: true
+    },
+    {
+      title: "AI/ML Engineer - Stage 1",
+      issuer: "Centre for Open and Distance Education - SLIIT",
+      date: "December 24, 2025",
+      credentialId: "i7yyroezxi",
+      description: "Professional certification in Artificial Intelligence and Machine Learning Engineering, covering foundational concepts and practical applications in AI/ML development.",
+      skills: ["Artificial Intelligence", "Machine Learning", "AI Engineering", "ML Engineering", "Data Science"],
+      url: "https://code.sliit.org/certificates/i7yyroezxi",
+      verified: true
     }
   ]
 

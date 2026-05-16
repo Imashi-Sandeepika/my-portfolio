@@ -1,111 +1,146 @@
 import { motion } from 'framer-motion'
-import { Target, Lightbulb, TrendingUp, Heart, ShieldCheck, LifeBuoy, Users, Database } from 'lucide-react'
+import { Terminal, Globe, Layers, Database, Brain, Sparkles, MessageSquare, BarChart } from 'lucide-react'
 
 const About = () => {
-  const highlights = [
+  const services = [
     {
-      icon: <Target className="w-8 h-8 text-primary-600" />,
-      title: "Problem Solver",
-      description: "Passionate about analyzing complex datasets to solve real-world business challenges"
+      title: 'AI Model Training',
+      description: 'Building and fine-tuning machine learning models to solve complex predictive and classification problems.',
+      icon: (
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Brain size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
     },
     {
-      icon: <Lightbulb className="w-8 h-8 text-primary-600" />,
-      title: "Insight Generator",
-      description: "Expert in transforming raw data into actionable insights that drive strategic decisions"
+      title: 'Data Cleaning',
+      description: 'Transforming raw data into clean, structured formats to ensure accuracy for analysis and modeling.',
+      icon: (
+        <motion.div
+          animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.1, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Sparkles size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-primary-600" />,
-      title: "Continuous Learner",
-      description: "Committed to staying current with the latest analytics tools and visualization techniques"
+      title: 'Data Visualization',
+      description: 'Creating compelling and interactive visual representations of data to uncover actionable insights.',
+      icon: (
+        <motion.div
+          animate={{ y: [0, -5, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <BarChart size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
+    },
+    {
+      title: 'AI Chat Section Creation',
+      description: 'Developing intelligent conversational agents and chatbots to enhance user engagement and support.',
+      icon: (
+        <motion.div
+          animate={{ y: [0, -8, 0], rotate: [0, -5, 5, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <MessageSquare size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
+    },
+    {
+      title: 'Database Management',
+      description: 'Efficient design, management, and optimization of databases to ensure data integrity and security.',
+      icon: (
+        <motion.div
+          animate={{ y: [0, 4, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Database size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
+    },
+    {
+      title: 'Web Development',
+      description: 'High-quality development of sites at the professional level, focusing on performance and responsive design.',
+      icon: (
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+        >
+          <Globe size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
+    },
+    {
+      title: 'Fullstack Development',
+      description: 'End-to-end application development, seamlessly integrating front-end interfaces with secure back-end systems.',
+      icon: (
+        <motion.div
+          animate={{ scale: [1, 1.05, 1], y: [0, -3, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Layers size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
+    },
+    {
+      title: 'Software Development',
+      description: 'Professional development of robust, scalable, and user-friendly software solutions tailored to meet specific client needs.',
+      icon: (
+        <motion.div
+          animate={{ opacity: [1, 0.5, 1] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Terminal size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
     }
-  ]
+  ];
 
   return (
-    <section id="about" className="py-20 bg-secondary-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
-        </motion.div>
+    <div className="animate-fade-in">
+      <h2 className="text-3xl font-bold text-white mb-6 relative pb-4 inline-block">
+        About Me
+        <span className="absolute bottom-0 left-0 w-12 h-1.5 bg-sky-400 rounded-full"></span>
+      </h2>
+      
+      <div className="text-gray-300 space-y-4 mb-10 leading-relaxed text-[15px]">
+        <p>
+          I am a passionate Data Analyst and Business Intelligence Specialist with a strong foundation in analyzing complex datasets to solve real-world business challenges. I am dedicated to uncovering patterns and translating data into clear, actionable insights that drive business growth. 
+        </p>
+        <p>
+          With a dual background as a Professional Counselor, I bring a unique client-centered and empathetic approach to my professional work, ensuring that my technical expertise is matched with strong communication and collaborative skills.
+        </p>
+      </div>
 
-        <div className="w-full">
-          {/* About Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+      <h3 className="text-2xl font-bold text-white mb-6">What I'm Doing</h3>
+      
+      <div className="grid md:grid-cols-2 gap-6">
+        {services.map((service, index) => (
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="bg-[#212123] rounded-2xl p-6 border border-gray-800 shadow-md flex gap-5 items-start hover:border-sky-400 transition-colors duration-300"
           >
-            <div className="grid md:grid-cols-3 gap-10">
-              {/* Data Analysis / Data Science (Primary) */}
-              <div className="md:col-span-2 relative p-8 rounded-2xl bg-gradient-to-br from-primary-50 to-white border border-primary-200 shadow-lg">
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary-200/40 rounded-full blur-2xl" />
-                <div className="absolute -bottom-8 -right-10 w-32 h-32 bg-primary-100/50 rotate-12 rounded-xl blur-xl" />
-
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold mb-4">
-                  <Target className="w-4 h-4" />
-                  <span>Data Analysis / Data Science</span>
-                </div>
-
-                <h3 className="text-2xl font-semibold text-secondary-900 mb-4">Data Analyst & Business Intelligence Specialist</h3>
-                <p className="text-secondary-600 mb-4">
-                  Passionate about uncovering patterns and translating data into clear, actionable insights that drive business growth.
-                </p>
-
-                {/* Intro highlights */}
-                <div className="flex flex-wrap gap-3 mb-6">
-                  {highlights.map((highlight, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/70 backdrop-blur border border-primary-100 shadow-sm"
-                    >
-                      <span className="p-1.5 rounded-md bg-primary-50">{highlight.icon}</span>
-                      <span className="text-sm font-medium text-secondary-800">{highlight.title}</span>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <div className="grid gap-3">
-                  <div className="flex items-center gap-2 text-secondary-700"><Lightbulb className="w-4 h-4 text-primary-600" /> Storytelling visuals and dashboards</div>
-                  <div className="flex items-center gap-2 text-secondary-700"><TrendingUp className="w-4 h-4 text-primary-600" /> EDA and metrics that inform decisions</div>
-                  <div className="flex items-center gap-2 text-secondary-700"><Database className="w-4 h-4 text-primary-600" /> Python, SQL, Power BI, Excel</div>
-                </div>
-              </div>
-
-              {/* Professional Counselor (Secondary) */}
-              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-sky-50 to-white border border-sky-200 shadow-lg">
-                <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-sky-200/40 rounded-full blur-xl" />
-
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-semibold mb-4">
-                  <Heart className="w-4 h-4" />
-                  <span>Professional Counselor</span>
-                </div>
-
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3">Client-Centered, Ethical Practice</h3>
-                <div className="space-y-2 text-secondary-700">
-                  <div className="flex items-center gap-2"><Heart className="w-4 h-4 text-sky-600" /> Empathy: compassionate listening and emotional attunement</div>
-                  <div className="flex items-center gap-2"><Users className="w-4 h-4 text-sky-600" /> Client-Centered: collaborative goals and strengths-based support</div>
-                  <div className="flex items-center gap-2"><LifeBuoy className="w-4 h-4 text-sky-600" /> Crisis Intervention: de-escalation, safety planning, referrals</div>
-                  <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-sky-600" /> Ethical Practice: confidentiality, boundaries, informed consent</div>
-                </div>
-              </div>
+            <div className="mt-1 flex-shrink-0 flex items-center justify-center w-12 h-12 bg-[#282829] rounded-xl border border-gray-800">
+              {service.icon}
+            </div>
+            <div className="flex-1">
+              <h4 className="text-[17px] font-bold text-white mb-2">{service.title}</h4>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {service.description}
+              </p>
             </div>
           </motion.div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   )
 }
 
