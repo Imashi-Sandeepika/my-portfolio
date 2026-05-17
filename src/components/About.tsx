@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Terminal, Globe, Layers, Database, Brain, Sparkles, MessageSquare, BarChart } from 'lucide-react'
+import { Terminal, Globe, Layers, Database, Brain, Sparkles, MessageSquare, BarChart, Users, Heart } from 'lucide-react'
 
 const About = () => {
   const services = [
@@ -96,6 +96,30 @@ const About = () => {
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <Terminal size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
+    },
+    {
+      title: 'Counseling & Human Insight',
+      description: 'Combining professional counseling skills with analytical thinking to understand human behavior, improve communication, and provide client-centered support.',
+      icon: (
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Users size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+        </motion.div>
+      )
+    },
+    {
+      title: 'Personal Development & Well-being Support',
+      description: 'Supporting individuals in personal growth, emotional well-being, stress management, and confident decision-making through empathetic guidance.',
+      icon: (
+        <motion.div
+          animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Heart size={40} className="text-sky-400 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
         </motion.div>
       )
     }

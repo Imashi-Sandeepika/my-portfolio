@@ -1,4 +1,4 @@
-import { Eye, Github } from 'lucide-react'
+import { Eye, Github, BookOpen, ExternalLink } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
@@ -25,6 +25,20 @@ const Projects = () => {
       desc: "A professional, responsive portfolio showcasing data analysis, visualization, and problem-solving skills.",
       github: "https://github.com/Imashi-Sandeepika/my-portfolio",
       demo: "https://my-portfolio-beige-ten-63.vercel.app"
+    },
+    {
+      title: "University Complaint Management",
+      category: "Web Application",
+      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop",
+      desc: "A comprehensive system designed to streamline and manage university complaints efficiently, ensuring better communication and resolution.",
+      github: "https://github.com/Madhuka200044/Complaint_Management_System_for_University.git"
+    },
+    {
+      title: "Fruit Classifier App",
+      category: "Machine Learning & Vision",
+      image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=600&auto=format&fit=crop",
+      desc: "An intelligent image classifier utilizing transfer learning to accurately identify and categorize various types of fruits via a web interface.",
+      github: "https://github.com/Imashi-Sandeepika/Fruit-Classifier.git"
     }
   ]
 
@@ -41,9 +55,11 @@ const Projects = () => {
             <div className="h-48 overflow-hidden relative">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-[#1e1e1f]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="bg-[#282829] p-3 rounded-xl text-sky-400 hover:text-white transition-colors border border-gray-700">
-                  <Eye size={20} />
-                </a>
+                {project.demo && (
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="bg-[#282829] p-3 rounded-xl text-sky-400 hover:text-white transition-colors border border-gray-700">
+                    <Eye size={20} />
+                  </a>
+                )}
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="bg-[#282829] p-3 rounded-xl text-sky-400 hover:text-white transition-colors border border-gray-700">
                   <Github size={20} />
                 </a>
@@ -56,6 +72,28 @@ const Projects = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-16">
+        <h2 className="text-3xl font-bold text-white mb-8 relative pb-4 inline-block">
+          Research
+          <span className="absolute bottom-0 left-0 w-12 h-1.5 bg-sky-400 rounded-full"></span>
+        </h2>
+        
+        <div className="bg-[#212123] rounded-2xl border border-gray-800 p-8 shadow-md hover:border-sky-400 transition-colors duration-300">
+          <div className="flex items-start gap-5 flex-col md:flex-row">
+            <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-[#282829] rounded-xl border border-gray-800 text-sky-400">
+              <BookOpen size={28} />
+            </div>
+            <div className="flex-1">
+              <span className="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2 block">BA Psychology Final Year Project</span>
+              <h3 className="text-xl font-bold text-white mb-3">Mental Well-being of Professionals in the ICT Industry</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Investigated the psychological state, stress levels, cognitive load, and emotional well-being of ICT professionals. Utilizing data collected through observations and interviews, the study identified key workplace challenges and proposed practical preventive strategies to improve work-life balance and promote healthier, more productive environments in the tech sector.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
