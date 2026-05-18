@@ -1,36 +1,66 @@
-import { Award } from 'lucide-react'
+import { Award, ExternalLink } from 'lucide-react'
 
 const Certifications = () => {
   const certifications = [
     {
-      title: "Python Basics",
-      issuer: "University of Michigan",
-      date: "March 2024",
-    },
-    {
       title: "Programming for Everybody (Getting Started with Python)",
       issuer: "University of Michigan",
-      date: "January 2024",
+      link: "https://www.coursera.org/account/accomplishments/verify/GNACW4RYATUQ"
+    },
+    {
+      title: "Python Basic",
+      issuer: "University of Michigan",
+      link: "https://www.coursera.org/account/accomplishments/verify/DO6SVSJITAKX"
+    },
+    {
+      title: "Python Classes and Inheritance",
+      issuer: "University of Michigan",
+      link: "https://www.coursera.org/account/accomplishments/verify/IB0MUDUW0GAT"
     },
     {
       title: "Python Data Structures",
       issuer: "University of Michigan",
-      date: "November 2024",
+      link: "https://www.coursera.org/account/accomplishments/verify/BUM5IB3FL558"
     },
     {
       title: "Python for Data Science, AI & Development",
       issuer: "IBM",
-      date: "October 2025",
+      link: "https://www.coursera.org/account/accomplishments/verify/JDQSTVXSV695"
     },
     {
       title: "Introduction to Software Engineering",
-      issuer: "Coursera",
-      date: "November 2025",
+      issuer: "IBM",
+      link: "https://www.coursera.org/account/accomplishments/verify/Q00BZF6NNVX8"
     },
     {
-      title: "AI/ML Engineer - Stage 1",
-      issuer: "Centre for Open and Distance Education - SLIIT",
-      date: "December 2025",
+      title: "Capstone: Retrieving, Processing, and Visualizing Data with Python",
+      issuer: "University of Michigan",
+      link: "https://www.coursera.org/account/accomplishments/verify/YZ3CPB5R9FPI"
+    },
+    {
+      title: "AI/ML Engineer - Stage 1 - SLIIT",
+      issuer: "SLIIT Department of Maths and Statistics",
+      link: "https://code.sliit.org/certificates/i7yyroezxi"
+    },
+    {
+      title: "Preparing Data for Analysis with Microsoft Excel",
+      issuer: "Microsoft",
+      link: "https://www.coursera.org/account/accomplishments/verify/EFGOE9Q33F7L"
+    },
+    {
+      title: "Power BI Data Analytics and Data Preparation",
+      issuer: "Whizlabs",
+      link: "https://www.coursera.org/account/accomplishments/verify/22RY7ORQ03BV"
+    },
+    {
+      title: "Harnessing the Power of Data with Power BI",
+      issuer: "Microsoft",
+      link: "https://www.coursera.org/account/accomplishments/verify/G65Y7TSFPC19"
+    },
+    {
+      title: "Data Preparation and Visualization with Power BI",
+      issuer: "Packt",
+      link: "https://www.coursera.org/account/accomplishments/verify/4JSKAZTFVW8G"
     }
   ]
 
@@ -46,21 +76,30 @@ const Certifications = () => {
           <div className="w-12 h-12 bg-[#212123] text-sky-400 rounded-xl flex items-center justify-center shadow-md border border-gray-800">
             <Award size={24} />
           </div>
-          <h3 className="text-2xl font-bold text-white">Certifications</h3>
+          <h3 className="text-2xl font-bold text-white">My Credentials</h3>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
-            <div key={index} className="bg-[#212123] p-6 rounded-2xl border border-gray-800 flex items-start gap-4 shadow-sm hover:border-sky-400 transition-colors duration-300">
-              <div className="bg-[#282829] p-3 rounded-xl text-sky-400 mt-1 border border-gray-800 flex-shrink-0">
+            <a 
+              key={index} 
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#212123] p-6 rounded-2xl border border-gray-800 flex items-start gap-4 shadow-sm hover:border-sky-400 transition-all duration-300 hover:scale-[1.02] group cursor-pointer animate-slide-up"
+              style={{ animationDelay: `${index * 50}ms` }}
+            >
+              <div className="bg-[#282829] p-3 rounded-xl text-sky-400 mt-1 border border-gray-800 flex-shrink-0 group-hover:bg-sky-400 group-hover:text-white transition-colors duration-300">
                 <Award size={24} />
               </div>
-              <div>
-                <h4 className="text-white font-bold text-[15px] mb-1">{cert.title}</h4>
-                <p className="text-gray-400 text-sm mb-2">{cert.issuer}</p>
-                <span className="text-xs text-sky-400 font-semibold px-2 py-1 bg-[#282829] rounded-md inline-block">Issued: {cert.date}</span>
+              <div className="flex-1 text-left">
+                <div className="flex items-start justify-between gap-2">
+                  <h4 className="text-white font-bold text-[15px] mb-1 group-hover:text-sky-400 transition-colors duration-300 leading-snug">{cert.title}</h4>
+                  <ExternalLink size={16} className="text-gray-500 group-hover:text-sky-400 transition-colors duration-300 mt-1 flex-shrink-0" />
+                </div>
+                <p className="text-gray-400 text-sm mt-1">{cert.issuer}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

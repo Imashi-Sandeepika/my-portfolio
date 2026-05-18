@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
-import { Heart, Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
+import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

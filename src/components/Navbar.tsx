@@ -7,7 +7,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
-  const tabs = ['About', 'Resume', 'Projects', 'Certifications']
+  const tabs = ['About', 'Resume', 'Projects', 'Certifications', 'Contact']
 
   return (
     <div className="sticky top-6 z-50 flex justify-center lg:justify-end w-full px-4 lg:px-8 pt-6">

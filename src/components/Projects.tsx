@@ -1,5 +1,7 @@
-import { Eye, Github, BookOpen, ExternalLink } from 'lucide-react'
+import { Eye, Github, BookOpen, FileText } from 'lucide-react'
 import counselingImg from '../assets/counseling.png'
+import thesisPdf from '../assets/Research final PSY.pdf'
+import transcriptPdf from '../assets/Acedemic Transcript PSY.pdf'
 
 
 const Projects = () => {
@@ -40,7 +42,8 @@ const Projects = () => {
       category: "Machine Learning & Vision",
       image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=600&auto=format&fit=crop",
       desc: "An intelligent image classifier utilizing transfer learning to accurately identify and categorize various types of fruits via a web interface.",
-      github: "https://github.com/Imashi-Sandeepika/Fruit-Classifier.git"
+      github: "https://github.com/Imashi-Sandeepika/Fruit-Classifier.git",
+      demo: "https://fruit-classifier-q3fi.onrender.com"
     },
     {
       title: "Counseling Web App",
@@ -59,7 +62,7 @@ const Projects = () => {
         Projects
         <span className="absolute bottom-0 left-0 w-12 h-1.5 bg-sky-400 rounded-full"></span>
       </h2>
-      
+
       <div className="grid md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <div key={index} className="group relative bg-[#212123] rounded-2xl border border-gray-800 overflow-hidden shadow-md flex flex-col h-full">
@@ -90,7 +93,7 @@ const Projects = () => {
           Research
           <span className="absolute bottom-0 left-0 w-12 h-1.5 bg-sky-400 rounded-full"></span>
         </h2>
-        
+
         <div className="bg-[#212123] rounded-2xl border border-gray-800 p-8 shadow-md hover:border-sky-400 transition-colors duration-300">
           <div className="flex items-start gap-5 flex-col md:flex-row">
             <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 bg-[#282829] rounded-xl border border-gray-800 text-sky-400">
@@ -99,9 +102,30 @@ const Projects = () => {
             <div className="flex-1">
               <span className="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2 block">BA Psychology Final Year Project</span>
               <h3 className="text-xl font-bold text-white mb-3">Exploring the Impact of Human Psychology and Counseling in Enhancing User Experience and Mental Well-being (Within the ICT Industry through Web Technology)</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Investigated the psychological state, stress levels, cognitive load, and emotional well-being of ICT professionals. Utilizing data collected through observations and interviews, the study identified key workplace challenges and proposed practical preventive strategies to improve work-life balance and promote healthier, more productive environments in the tech sector.
               </p>
+              
+              <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-800">
+                <a 
+                  href={thesisPdf} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#282829] hover:bg-[#323233] text-gray-200 hover:text-white rounded-xl border border-gray-800 hover:border-sky-400 transition-all duration-300 text-sm font-medium shadow-sm"
+                >
+                  <FileText size={18} className="text-sky-400" />
+                  View Final Thesis
+                </a>
+                <a 
+                  href={transcriptPdf} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#282829] hover:bg-[#323233] text-gray-200 hover:text-white rounded-xl border border-gray-800 hover:border-sky-400 transition-all duration-300 text-sm font-medium shadow-sm"
+                >
+                  <FileText size={18} className="text-sky-400" />
+                  View Academic Transcript
+                </a>
+              </div>
             </div>
           </div>
         </div>

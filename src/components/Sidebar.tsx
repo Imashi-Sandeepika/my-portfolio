@@ -1,4 +1,4 @@
-import { Mail, Phone, Calendar, MapPin, Github, Linkedin, Facebook, Instagram } from 'lucide-react'
+import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Instagram } from 'lucide-react'
 import profileImg from '../assets/MyOff.jpg'
 
 const Sidebar = () => {

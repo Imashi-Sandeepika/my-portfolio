@@ -5,6 +5,7 @@ import About from './components/About'
 import Resume from './components/Resume'
 import Projects from './components/Projects'
 import Certifications from './components/Certifications'
+import Contact from './components/Contact'
 
 function App() {
   const [activeTab, setActiveTab] = useState('About')
@@ -19,6 +20,8 @@ function App() {
         return <Projects />
       case 'Certifications':
         return <Certifications />
+      case 'Contact':
+        return <Contact />
       default:
         return <About />
     }
