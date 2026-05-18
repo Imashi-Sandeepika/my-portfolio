@@ -1,4 +1,6 @@
 import { Eye, Github, BookOpen, ExternalLink } from 'lucide-react'
+import counselingImg from '../assets/counseling.png'
+
 
 const Projects = () => {
   const projects = [
@@ -39,6 +41,15 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=600&auto=format&fit=crop",
       desc: "An intelligent image classifier utilizing transfer learning to accurately identify and categorize various types of fruits via a web interface.",
       github: "https://github.com/Imashi-Sandeepika/Fruit-Classifier.git"
+    },
+    {
+      title: "Counseling Web App",
+      category: "Web Application",
+      image: counselingImg,
+      imageClass: "object-top", // Use object-top to anchor the image to the top so faces are visible
+      desc: "A comprehensive web application designed to facilitate professional counseling services and mental health support.",
+      github: "https://github.com/Imashi-Sandeepika/Counseling-web-app.git",
+      demo: "https://counseling-web-app.vercel.app"
     }
   ]
 
@@ -53,7 +64,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div key={index} className="group relative bg-[#212123] rounded-2xl border border-gray-800 overflow-hidden shadow-md flex flex-col h-full">
             <div className="h-48 overflow-hidden relative">
-              <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img src={project.image} alt={project.title} className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${project.imageClass || ''}`} />
               <div className="absolute inset-0 bg-[#1e1e1f]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                 {project.demo && (
                   <a href={project.demo} target="_blank" rel="noopener noreferrer" className="bg-[#282829] p-3 rounded-xl text-sky-400 hover:text-white transition-colors border border-gray-700">
@@ -87,7 +98,7 @@ const Projects = () => {
             </div>
             <div className="flex-1">
               <span className="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2 block">BA Psychology Final Year Project</span>
-              <h3 className="text-xl font-bold text-white mb-3">Mental Well-being of Professionals in the ICT Industry</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Exploring the Impact of Human Psychology and Counseling in Enhancing User Experience and Mental Well-being (Within the ICT Industry through Web Technology)</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Investigated the psychological state, stress levels, cognitive load, and emotional well-being of ICT professionals. Utilizing data collected through observations and interviews, the study identified key workplace challenges and proposed practical preventive strategies to improve work-life balance and promote healthier, more productive environments in the tech sector.
               </p>
