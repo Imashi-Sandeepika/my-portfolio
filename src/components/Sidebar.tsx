@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Instagram } from 'lucide-react'
+import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react'
 import profileImg from '../assets/MyOff.jpg'
 
 const Sidebar = () => {
@@ -53,10 +53,24 @@ const Sidebar = () => {
       </div>
       
       <div className="flex gap-4 mt-8 pt-6 border-t border-gray-800 w-full justify-center">
-        <a href="#" className="text-gray-400 hover:text-sky-400 transition-colors"><Linkedin size={20} /></a>
-        <a href="#" className="text-gray-400 hover:text-sky-400 transition-colors"><Github size={20} /></a>
-        <a href="#" className="text-gray-400 hover:text-sky-400 transition-colors"><Facebook size={20} /></a>
-        <a href="#" className="text-gray-400 hover:text-sky-400 transition-colors"><Instagram size={20} /></a>
+        <a 
+          href="https://www.linkedin.com/in/imashisandeepika-b0a38a3a1/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-gray-400 hover:text-sky-400 transition-colors"
+          title="LinkedIn"
+        >
+          <Linkedin size={20} />
+        </a>
+        <a 
+          href="https://github.com/Imashi-Sandeepika" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-gray-400 hover:text-sky-400 transition-colors"
+          title="GitHub"
+        >
+          <Github size={20} />
+        </a>
       </div>
     </aside>
   )

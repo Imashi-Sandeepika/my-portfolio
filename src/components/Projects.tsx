@@ -2,6 +2,10 @@ import { Eye, Github, BookOpen, FileText } from 'lucide-react'
 import counselingImg from '../assets/counseling.png'
 import thesisPdf from '../assets/Research final PSY.pdf'
 import transcriptPdf from '../assets/Acedemic Transcript PSY.pdf'
+import diabetesImg from '../assets/Diabetes Prediction.png'
+import rockVsMineImg from '../assets/maxresdefault.jpg'
+import popupExtensionImg from '../assets/Screenshot 2026-06-14 124659.png'
+
 
 
 const Projects = () => {
@@ -21,6 +25,27 @@ const Projects = () => {
       desc: "A machine learning project that predicts laptop prices based on specifications like brand, processor, RAM, and GPU.",
       github: "https://github.com/Imashi-Sandeepika/Laptop-Price-Predictor.git",
       demo: "https://laptop-price-predictor-oqep.onrender.com"
+    },
+    {
+      title: "Diabetes Prediction",
+      category: "Machine Learning & Healthcare",
+      image: diabetesImg,
+      desc: "A machine learning project built with Python to predict the likelihood of diabetes in patients based on key diagnostic factors.",
+      github: "https://github.com/Imashi-Sandeepika/Diabetes-Prediction"
+    },
+    {
+      title: "Rock vs Mine Prediction",
+      category: "Machine Learning",
+      image: rockVsMineImg,
+      desc: "A machine learning model developed in Python to classify sonar returns as either a rock or a mine using predictive algorithms.",
+      github: "https://github.com/Imashi-Sandeepika/Rock-vs-Mine-Prediction"
+    },
+    {
+      title: "Popup Message Extension",
+      category: "Chrome Extension",
+      image: popupExtensionImg,
+      desc: "A custom Chrome extension that displays notifications or popup messages within the browser.",
+      github: "https://github.com/Imashi-Sandeepika/Popup-Message-Extension"
     },
     {
       title: "Modern React + Vite Portfolio",

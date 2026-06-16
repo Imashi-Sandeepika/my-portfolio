@@ -1,5 +1,8 @@
-import { BookOpen, Briefcase } from 'lucide-react'
+import { BookOpen, Briefcase, ExternalLink } from 'lucide-react'
 import Skills from './Skills'
+import degreePdf from '../assets/Degree Certificate.pdf'
+import hrmPdf from '../assets/HRM.pdf'
+import psyPdf from '../assets/PSY.pdf'
 
 const Resume = () => {
   return (
@@ -29,21 +32,51 @@ const Resume = () => {
             
             <div className="relative">
               <div className="absolute -left-[41px] top-1 w-4 h-4 bg-sky-400 rounded-full shadow-[0_0_0_4px_#1e1e1f]"></div>
-              <h4 className="text-[17px] font-bold text-white mb-1">Bachelor of Arts in Psychology</h4>
+              <h4 className="text-[17px] font-bold text-white mb-1">
+                <a 
+                  href={degreePdf} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-sky-400 transition-colors duration-300 inline-flex items-center gap-1.5 group cursor-pointer"
+                >
+                  Bachelor of Arts in Psychology
+                  <ExternalLink size={14} className="text-gray-500 group-hover:text-sky-400 transition-colors duration-300" />
+                </a>
+              </h4>
               <span className="text-sky-400 text-sm font-semibold mb-2 inline-block">2022 - 2025</span>
               <p className="text-gray-400 text-sm">IIC University of Technology</p>
             </div>
 
             <div className="relative">
               <div className="absolute -left-[41px] top-1 w-4 h-4 bg-sky-400 rounded-full shadow-[0_0_0_4px_#1e1e1f]"></div>
-              <h4 className="text-[17px] font-bold text-white mb-1">Diploma in Human Resource Management</h4>
+              <h4 className="text-[17px] font-bold text-white mb-1">
+                <a 
+                  href={hrmPdf} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-sky-400 transition-colors duration-300 inline-flex items-center gap-1.5 group cursor-pointer"
+                >
+                  Diploma in Human Resource Management
+                  <ExternalLink size={14} className="text-gray-500 group-hover:text-sky-400 transition-colors duration-300" />
+                </a>
+              </h4>
               <span className="text-sky-400 text-sm font-semibold mb-2 inline-block">2020 - 2021</span>
               <p className="text-gray-400 text-sm">IMBS Institute of Management & Business Studies</p>
             </div>
             
             <div className="relative">
               <div className="absolute -left-[41px] top-1 w-4 h-4 bg-sky-400 rounded-full shadow-[0_0_0_4px_#1e1e1f]"></div>
-              <h4 className="text-[17px] font-bold text-white mb-1">Diploma in Psychology</h4>
+              <h4 className="text-[17px] font-bold text-white mb-1">
+                <a 
+                  href={psyPdf} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-sky-400 transition-colors duration-300 inline-flex items-center gap-1.5 group cursor-pointer"
+                >
+                  Diploma in Psychology
+                  <ExternalLink size={14} className="text-gray-500 group-hover:text-sky-400 transition-colors duration-300" />
+                </a>
+              </h4>
               <span className="text-sky-400 text-sm font-semibold mb-2 inline-block">2020 - 2021</span>
               <p className="text-gray-400 text-sm">IMBS Institute of Management & Business Studies</p>
             </div>

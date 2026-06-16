@@ -19,7 +19,7 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/imashi-sandeepika",
+      href: "https://github.com/Imashi-Sandeepika",
       label: "GitHub"
     },
     {
